@@ -1,13 +1,12 @@
-name: get Lines
-description: Writes text to a file.
+name: Get Lines
+description: Gets the specified number of lines from the input file.
 
 inputs:
-  - name: text
-    type: String
+- {name: Input 1, type: Data, description: 'Data for input 1'}
+- {name: Parameter 1, type: Integer, default: '100', description: 'Number of lines to copy'}
 
 outputs:
-  - name: data
-    type: Data
+- {name: Output 1, type: Data, description: 'Output 1 data.'}
 
 implementation:
   container:
