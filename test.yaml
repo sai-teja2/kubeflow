@@ -2,20 +2,22 @@ name: Write Lines
 description: Writes text to a file.
 
 inputs:
-- {name: text, type: String}
+  - name: text
+    type: String
 
 outputs:
-- {name: data, type: Data}
+  - name: data
+    type: Data
 
 implementation:
   container:
     image: seedellasaiteja/test_2:3
-    command:
-    - sh
-    - -c
-    - |
-      mkdir -p "$(dirname "$1")"
-      echo "$0" > "$1"
-    args:
-    - {inputValue: text}
-    - {outputPath: data}
+    command: 
+      - python3
+      - /pipelines/component/src/program.py
+      - --input1-path
+      - {inputPath: Input 1}
+      - --param1
+      - {inputValue: Parameter 1}
+      - --output1-path
+      - {outputPath: Output 1}
