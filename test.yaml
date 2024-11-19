@@ -1,4 +1,4 @@
-name: Write Lines
+name: get Lines
 description: Writes text to a file.
 
 inputs:
